@@ -18,7 +18,7 @@ defmodule Geom do
   def area(:rectangle, w, h) when w >= 0 and h >= 0, do: w * h
   def area(:triangle, w, h) when w >= 0 and h >= 0, do: w * h / 2.0
   def area(:ellipse, r1, r2) when r1 >= 0 and r2 >= 0, do: :math.pi() * r1 * r2
-  def area(_, x, y) when x >= 0 and y >= 0, do: 0
+  def area(_, _, _), do: 0
 
 
 end

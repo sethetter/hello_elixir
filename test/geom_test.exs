@@ -17,28 +17,13 @@ defmodule GeomTest do
     assert Geom.area(:ellipse, 3, 7) == 65.97344572538566
   end
 
-  test "ensures positive numbers" do
-    assert_raise FunctionClauseError, fn() ->
-      Geom.area(:rectangle, -1, 5)
-    end
-    assert_raise FunctionClauseError, fn() ->
-      Geom.area(:rectangle, 1, -5)
-    end
-    assert_raise FunctionClauseError, fn() ->
-      Geom.area(:triangle, -1, 5)
-    end
-    assert_raise FunctionClauseError, fn() ->
-      Geom.area(:triangle, 1, -5)
-    end
-    assert_raise FunctionClauseError, fn() ->
-      Geom.area(:ellipse, -1, 5)
-    end
-    assert_raise FunctionClauseError, fn() ->
-      Geom.area(:ellipse, 1, -5)
-    end
-  end
-
-  test "handles unknown shape by returning 0" do
+  test "responds to invalid parameters with 0" do
+    assert Geom.area(:rectangle, -1, 5) == 0
+    assert Geom.area(:rectangle, 1, -5) == 0
+    assert Geom.area(:triangle, -1, 5) == 0
+    assert Geom.area(:triangle, 1, -5) == 0
+    assert Geom.area(:ellipse, -1, 5) == 0
+    assert Geom.area(:ellipse, 1, -5) == 0
     assert Geom.area(:lolwat, 1, 2) == 0
   end
 
