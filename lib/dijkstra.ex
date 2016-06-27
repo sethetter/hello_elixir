@@ -11,11 +11,7 @@ defmodule Dijkstra do
   """
   @spec gcd(number(), number()) :: number()
 
-  def gcd(x, y) do
-    cond do
-      x == y -> x
-      x > y -> gcd(x - y, y)
-      x < y -> gcd(x, y - x)
-    end
-  end
+  def gcd(x, y) when x == y, do: x
+  def gcd(x, y) when x > y, do: gcd(x - y, y)
+  def gcd(x, y) when x < y, do: gcd(x, y - x)
 end
