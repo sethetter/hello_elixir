@@ -12,4 +12,10 @@ defmodule PowersTest do
   test "handles negative numbers" do
     assert Powers.raise(2, -3) == 0.125
   end
+
+  test "nth_root will find the nth root of a number" do
+    assert Powers.nth_root(36, 2) == 6
+    assert Powers.nth_root(9, 2) == 3
+    assert Powers.nth_root(27, 3) == 3
+  end
 end
